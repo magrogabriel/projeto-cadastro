@@ -5,6 +5,7 @@ interface EntradaProps {
     somenteLeitura?: boolean
     className?: string
     valorMudou?: (valor: any) => void
+    placeholderForm?: string
 }
 export default function Entrada(props: EntradaProps) {
     return (

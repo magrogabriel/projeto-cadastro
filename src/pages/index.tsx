@@ -14,7 +14,8 @@ export default function Home() {
     selecionarCliente,
     excluirCliente,
     tabelaVisivel,
-    exibirTabela } = useClientes()
+    exibirTabela
+   } = useClientes()
 
   return (
     <>
