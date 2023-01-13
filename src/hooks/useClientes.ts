@@ -12,7 +12,13 @@ export default function useClientes() {
     const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
     const [clientes, setClientes] = useState<Cliente>([])
 
-    useEffect(obterTodos, [])
+    useEffect(() => {
+        repo.obterTodos().then(clientes => {
+            setClientes(clientes)
+            exibirTabela()
+        })
+        await obterTodos()
+    }, [])
 
     function obterTodos() {
         repo.obterTodos().then(clientes => {
