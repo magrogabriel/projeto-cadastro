@@ -10,15 +10,9 @@ export default function useClientes() {
     const {tabelaVisivel, exibirTabela, exibirFormulario } = useTabelaOuForm()
 
     const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
-    const [clientes, setClientes] = useState<Cliente>([])
+    const [clientes, setClientes] = useState<Cliente[]>([])
 
-    useEffect(() => {
-        repo.obterTodos().then(clientes => {
-            setClientes(clientes)
-            exibirTabela()
-        })
-        await obterTodos()
-    }, [])
+    useEffect(obterTodos, [])
 
     function obterTodos() {
         repo.obterTodos().then(clientes => {

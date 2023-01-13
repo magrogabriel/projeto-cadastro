@@ -15,7 +15,7 @@ export default function Entrada(props: EntradaProps) {
             </label>
             <input 
             type={props.tipo ?? 'text'} 
-            placeholder={props.placeholder} 
+            placeholder={props.placeholderForm} 
             value={props.valor} 
             readOnly={props.somenteLeitura}
             className={`
