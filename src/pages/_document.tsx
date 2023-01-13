@@ -2,8 +2,10 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="en">
-      <Head />
+    <Html lang="pt-br">
+      <Head>
+      <link rel="icon" type="image/x-icon" href="/ProjetoCadastroFav2.svg" />
+        </Head>
       <body>
         <Main />
         <NextScript />
