@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState, useEffect } from "react"
 import Cliente from "../core/Cliente"
 import ColecaoCliente from "../backend/db/ColecaoCliente"
