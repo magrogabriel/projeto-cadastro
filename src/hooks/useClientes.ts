@@ -13,7 +13,13 @@ export default function useClientes() {
     const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
     const [clientes, setClientes] = useState<Cliente[]>([])
 
-    useEffect(obterTodos, [])
+    useEffect(() => {
+        repo.obterTodos().then(clientes => {
+            setClientes(clientes)
+            exibirTabela()
+            console.log('obteve todos')
+    })
+}, [])
 
     function obterTodos() {
         repo.obterTodos().then(clientes => {
@@ -31,18 +37,25 @@ export default function useClientes() {
 
     async function excluirCliente(cliente: Cliente) {
         await repo.excluir(cliente)
-        obterTodos()
-    }
+        repo.obterTodos().then(clientes => {
+            setClientes(clientes)
+            exibirTabela()
+            console.log('obteve todos')
+    })
+}
 
     async function salvarCliente(cliente: Cliente) {
         await repo.salvar(cliente)
-        obterTodos()
-    }
+        repo.obterTodos().then(clientes => {
+            setClientes(clientes)
+            exibirTabela()
+            console.log('obteve todos')
+    })
+}
 
     function novoCliente() {
         setCliente(Cliente.vazio())
         exibirFormulario()
-        console.log('clicou')
     }
 
     return {
