@@ -19,6 +19,7 @@ export default function useClientes() {
         repo.obterTodos().then(clientes => {
             setClientes(clientes)
             exibirTabela()
+            console.log('obteve todos')
         })
     }
 
